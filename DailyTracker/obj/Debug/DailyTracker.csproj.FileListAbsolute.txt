@@ -7,3 +7,13 @@ C:\Users\Danny\Downloads\DailyTracker\obj\Debug\DailyTracker.csproj.GenerateReso
 C:\Users\Danny\Downloads\DailyTracker\obj\Debug\DailyTracker.csproj.CoreCompileInputs.cache
 C:\Users\Danny\Downloads\DailyTracker\obj\Debug\DailyTracker.exe
 C:\Users\Danny\Downloads\DailyTracker\obj\Debug\DailyTracker.pdb
+C:\Users\Danny\Documents\Program - C#\daily-tracker\DailyTracker\bin\Debug\DailyTracker.exe.config
+C:\Users\Danny\Documents\Program - C#\daily-tracker\DailyTracker\bin\Debug\DailyTracker.exe
+C:\Users\Danny\Documents\Program - C#\daily-tracker\DailyTracker\bin\Debug\DailyTracker.pdb
+C:\Users\Danny\Documents\Program - C#\daily-tracker\DailyTracker\obj\Debug\DailyTracker.csprojAssemblyReference.cache
+C:\Users\Danny\Documents\Program - C#\daily-tracker\DailyTracker\obj\Debug\DailyTracker.Form1.resources
+C:\Users\Danny\Documents\Program - C#\daily-tracker\DailyTracker\obj\Debug\DailyTracker.Properties.Resources.resources
+C:\Users\Danny\Documents\Program - C#\daily-tracker\DailyTracker\obj\Debug\DailyTracker.csproj.GenerateResource.cache
+C:\Users\Danny\Documents\Program - C#\daily-tracker\DailyTracker\obj\Debug\DailyTracker.csproj.CoreCompileInputs.cache
+C:\Users\Danny\Documents\Program - C#\daily-tracker\DailyTracker\obj\Debug\DailyTracker.exe
+C:\Users\Danny\Documents\Program - C#\daily-tracker\DailyTracker\obj\Debug\DailyTracker.pdb

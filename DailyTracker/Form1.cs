@@ -1,4 +1,5 @@
-﻿using System;
+﻿/// Author: Wonseok Han
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,13 +19,22 @@ namespace DailyTracker
 
             // Manage UI Properties
             {
-                _addNewGoal.Text = 
+                _newCatBtn.Text = $"Add New Goal";
+                _goalLabel.Text = $"Test Goal";
+                _incBtn.Text = $"Increment";
+                _resetBtn.Text = $"Reset";
+                _streakLabel.Text = $"1";
+                _dateLabel.Text = $"--/--/--";                
             }
+
+            _newGoalBtn.Click += _newGoalBtn_Click;
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void _newGoalBtn_Click(object sender, EventArgs e)
         {
+            // Display pop-up for user to enter name of the goal
 
+            // Use that input to create a new goal panel
         }
     }
 }
