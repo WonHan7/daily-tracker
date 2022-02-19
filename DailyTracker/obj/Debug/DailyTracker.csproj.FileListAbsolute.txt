@@ -1,0 +1,9 @@
+C:\Users\Danny\Downloads\DailyTracker\bin\Debug\DailyTracker.exe.config
+C:\Users\Danny\Downloads\DailyTracker\bin\Debug\DailyTracker.exe
+C:\Users\Danny\Downloads\DailyTracker\bin\Debug\DailyTracker.pdb
+C:\Users\Danny\Downloads\DailyTracker\obj\Debug\DailyTracker.csprojAssemblyReference.cache
+C:\Users\Danny\Downloads\DailyTracker\obj\Debug\DailyTracker.Properties.Resources.resources
+C:\Users\Danny\Downloads\DailyTracker\obj\Debug\DailyTracker.csproj.GenerateResource.cache
+C:\Users\Danny\Downloads\DailyTracker\obj\Debug\DailyTracker.csproj.CoreCompileInputs.cache
+C:\Users\Danny\Downloads\DailyTracker\obj\Debug\DailyTracker.exe
+C:\Users\Danny\Downloads\DailyTracker\obj\Debug\DailyTracker.pdb
