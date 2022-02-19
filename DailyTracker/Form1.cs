@@ -33,8 +33,8 @@ namespace DailyTracker
         private void _newGoalBtn_Click(object sender, EventArgs e)
         {
             // Display pop-up for user to enter name of the goal
-
-            // Use that input to create a new goal panel
+            InputModalDialog inputDialog = new InputModalDialog();
+            inputDialog.ShowModal();
         }
     }
 }
