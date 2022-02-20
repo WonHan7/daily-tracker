@@ -52,7 +52,14 @@ namespace DailyTracker
         {
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                // Do something in the event the user inputs correct information
+                if (dlg.Duration)
+                {
+                    // Do something
+                }
+                else
+                {
+                    Goal newGoal = new Goal(dlg.SetGoalName, this);
+                }
             }
         }
     }

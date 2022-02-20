@@ -31,10 +31,10 @@ namespace DailyTracker
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this._categoryToolStrip = new System.Windows.Forms.ToolStrip();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this._newGoalBtn = new System.Windows.Forms.Button();
             this._disciplineTool = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this._newCatBtn = new System.Windows.Forms.ToolStripButton();
+            this._newGoalBtn = new System.Windows.Forms.Button();
             this._categoryToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,21 +50,6 @@ namespace DailyTracker
             this._categoryToolStrip.TabIndex = 0;
             this._categoryToolStrip.Text = "toolStrip1";
             // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // _newGoalBtn
-            // 
-            this._newGoalBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._newGoalBtn.Location = new System.Drawing.Point(762, 422);
-            this._newGoalBtn.Name = "_newGoalBtn";
-            this._newGoalBtn.Size = new System.Drawing.Size(75, 23);
-            this._newGoalBtn.TabIndex = 1;
-            this._newGoalBtn.Text = "button1";
-            this._newGoalBtn.UseVisualStyleBackColor = true;
-            // 
             // _disciplineTool
             // 
             this._disciplineTool.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -75,6 +60,11 @@ namespace DailyTracker
             this._disciplineTool.Text = "toolStripButton1";
             this._disciplineTool.ToolTipText = "Discipline";
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
             // _newCatBtn
             // 
             this._newCatBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -83,6 +73,16 @@ namespace DailyTracker
             this._newCatBtn.Name = "_newCatBtn";
             this._newCatBtn.Size = new System.Drawing.Size(23, 22);
             this._newCatBtn.Text = "toolStripButton1";
+            // 
+            // _newGoalBtn
+            // 
+            this._newGoalBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._newGoalBtn.Location = new System.Drawing.Point(762, 422);
+            this._newGoalBtn.Name = "_newGoalBtn";
+            this._newGoalBtn.Size = new System.Drawing.Size(75, 23);
+            this._newGoalBtn.TabIndex = 1;
+            this._newGoalBtn.Text = "button1";
+            this._newGoalBtn.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

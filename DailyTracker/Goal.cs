@@ -19,12 +19,12 @@ namespace DailyTracker
         public int _currStreak { get; private set; }    // Current longest streak to be displayed
         public string _goalName { get; private set; }   // Goal name of the chosen panel
 
-        public Goal(string goalName)
+        public Goal(string goalName, Form form)
         {
             _goalName = goalName;
             _currStreak = 0;
             _currDate = DateTime.Now;
-            CreateGoalPanel();
+            CreateGoalPanel(form);
         }
 
         /// <summary>
@@ -33,6 +33,7 @@ namespace DailyTracker
         public void IncreaseStreak()
         {
             _currStreak++;
+            _currDate = DateTime.Now;
         }
 
         /// <summary>
@@ -41,84 +42,90 @@ namespace DailyTracker
         public void Reset()
         {
             _currStreak = 0;
+            _currDate = DateTime.Now;
         }
 
         /// <summary>
         /// Create goal panel.
         /// </summary>
-        private void CreateGoalPanel()
+        private void CreateGoalPanel(Form form)
         {
-            Color back1 = Color.FromArgb(39, 121, 149);
-            Color textCol = Color.White;
-            Size innerLabel = new Size(125, 23);
+            const int WIDTH = 200;
+            const int HEIGHT_LAB = 50;
+            Color mainBack = Color.Black;
+            Color font = Color.White;
 
             // Create initial panel
             Panel newPanel = new Panel();
             newPanel.Name = $"_{_goalName}Panel";
-            newPanel.Size = new Size(200, 100);
-            newPanel.Location = new Point(210, 81);
-            newPanel.BackColor = back1;
-            newPanel.BorderStyle = BorderStyle.None;
-
-            // Create header label
-            Label headerLabel = new Label();
-            headerLabel.Text = $"{_goalName}";
-            headerLabel.Name = $"_{_goalName}Label";
-            headerLabel.ForeColor = textCol;
-            headerLabel.TextAlign = ContentAlignment.MiddleCenter;
-            headerLabel.BackColor = Color.FromArgb(28, 88, 108);
-            headerLabel.BorderStyle = BorderStyle.None;
-            headerLabel.AutoSize = false;
-            headerLabel.Dock = DockStyle.Top;
-            headerLabel.Size = new Size(200, 30);
-
-            // Create increment button
-            Button incBtn = new Button();
-            incBtn.Text = $"Increment";
-            incBtn.Name = $"_{_goalName}IncBtn";
-            incBtn.BackColor = back1;
-            incBtn.FlatStyle = FlatStyle.Flat;
-            incBtn.FlatAppearance.BorderSize = 0;
-            incBtn.ForeColor = textCol;
-            incBtn.TextAlign = ContentAlignment.MiddleCenter;
-            incBtn.Dock = DockStyle.Left;
-            incBtn.Size = new Size(75, 70);
+            newPanel.Size = new Size(WIDTH, 200);
+            newPanel.Location = new Point(15, 35);
+            newPanel.BackColor = mainBack;
+            newPanel.BorderStyle = BorderStyle.FixedSingle;
 
             // Create streak label
             Label streakLabel = new Label();
             streakLabel.Text = $"{_currStreak}";
             streakLabel.Name = $"_{_goalName}StreakLabel";
-            streakLabel.ForeColor = textCol;
+            streakLabel.ForeColor = font;
             streakLabel.TextAlign = ContentAlignment.MiddleCenter;
-            streakLabel.BackColor = back1;
+            streakLabel.BackColor = mainBack;
             streakLabel.BorderStyle = BorderStyle.None;
             streakLabel.AutoSize = false;
-            streakLabel.Dock = DockStyle.Top;
-            streakLabel.Size = innerLabel;
+            streakLabel.Dock = DockStyle.Left;
+            newPanel.Controls.Add(streakLabel);
 
-            // Create reset button
-            Button resBtn = new Button();
-            resBtn.Text = $"Reset";
-            resBtn.Name = $"_{_goalName}ResetBtn";
-            resBtn.BackColor = back1;
-            resBtn.FlatStyle = FlatStyle.Flat;
-            resBtn.FlatAppearance.BorderSize = 0;
-            resBtn.ForeColor = textCol;
-            resBtn.TextAlign = ContentAlignment.MiddleCenter;
-            resBtn.Dock = DockStyle.Bottom;
-            resBtn.Size = innerLabel;
+            // Create increment button
+            Button incBtn = new Button();
+            incBtn.Text = $"Log";
+            incBtn.Name = $"_{_goalName}LogBtn";
+            incBtn.BackColor = mainBack;
+            incBtn.FlatStyle = FlatStyle.Flat;
+            incBtn.FlatAppearance.BorderSize = 0;
+            incBtn.ForeColor = font;
+            incBtn.TextAlign = ContentAlignment.MiddleCenter;
+            incBtn.Dock = DockStyle.Right;
+            newPanel.Controls.Add(incBtn);
+
+            // Create header label
+            Label headerLabel = new Label();
+            headerLabel.Text = $"{_goalName}";
+            headerLabel.Name = $"_{_goalName}Label";
+            headerLabel.ForeColor = font;
+            headerLabel.TextAlign = ContentAlignment.MiddleCenter;
+            headerLabel.BorderStyle = BorderStyle.None;
+            headerLabel.AutoSize = false;
+            headerLabel.Dock = DockStyle.Top;
+            headerLabel.Size = new Size(WIDTH, 30);
+            newPanel.Controls.Add(headerLabel);
 
             // Create datetime label
             Label dateLabel = new Label();
             dateLabel.Text = $"{_currDate}";
             dateLabel.Name = $"_{_goalName}DateLabel";
-            dateLabel.ForeColor = textCol;
+            dateLabel.ForeColor = font;
             dateLabel.TextAlign = ContentAlignment.MiddleCenter;
-            dateLabel.BackColor = back1;
+            dateLabel.BackColor = mainBack;
             dateLabel.BorderStyle = BorderStyle.None;
             dateLabel.AutoSize = false;
-            dateLabel.Dock = DockStyle.Fill;
-            dateLabel.Size = innerLabel;
+            dateLabel.Dock = DockStyle.Bottom;
+            dateLabel.Size = new Size(WIDTH, HEIGHT_LAB);
+            newPanel.Controls.Add(dateLabel);
+
+            // Create reset button
+            Button resBtn = new Button();
+            resBtn.Text = $"Reset";
+            resBtn.Name = $"_{_goalName}ResetBtn";
+            resBtn.BackColor = mainBack;
+            resBtn.FlatStyle = FlatStyle.Flat;
+            resBtn.FlatAppearance.BorderSize = 0;
+            resBtn.ForeColor = font;
+            resBtn.TextAlign = ContentAlignment.MiddleCenter;
+            resBtn.Dock = DockStyle.Bottom;
+            resBtn.Size = new Size(WIDTH, 30);
+            newPanel.Controls.Add(resBtn);
+
+            form.Controls.Add(newPanel);
         }
     }
 }
