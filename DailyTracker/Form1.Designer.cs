@@ -35,6 +35,7 @@ namespace DailyTracker
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this._newCatBtn = new System.Windows.Forms.ToolStripButton();
             this._newGoalBtn = new System.Windows.Forms.Button();
+            this._disciplineFLP = new System.Windows.Forms.FlowLayoutPanel();
             this._categoryToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +47,7 @@ namespace DailyTracker
             this._newCatBtn});
             this._categoryToolStrip.Location = new System.Drawing.Point(0, 0);
             this._categoryToolStrip.Name = "_categoryToolStrip";
-            this._categoryToolStrip.Size = new System.Drawing.Size(849, 25);
+            this._categoryToolStrip.Size = new System.Drawing.Size(874, 25);
             this._categoryToolStrip.TabIndex = 0;
             this._categoryToolStrip.Text = "toolStrip1";
             // 
@@ -76,20 +77,31 @@ namespace DailyTracker
             // 
             // _newGoalBtn
             // 
-            this._newGoalBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._newGoalBtn.Location = new System.Drawing.Point(762, 422);
+            this._newGoalBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._newGoalBtn.Location = new System.Drawing.Point(799, 0);
             this._newGoalBtn.Name = "_newGoalBtn";
-            this._newGoalBtn.Size = new System.Drawing.Size(75, 23);
+            this._newGoalBtn.Size = new System.Drawing.Size(75, 25);
             this._newGoalBtn.TabIndex = 1;
             this._newGoalBtn.Text = "button1";
             this._newGoalBtn.UseVisualStyleBackColor = true;
+            // 
+            // _disciplineFLP
+            // 
+            this._disciplineFLP.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this._disciplineFLP.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._disciplineFLP.Location = new System.Drawing.Point(0, 25);
+            this._disciplineFLP.Margin = new System.Windows.Forms.Padding(5);
+            this._disciplineFLP.Name = "_disciplineFLP";
+            this._disciplineFLP.Size = new System.Drawing.Size(874, 426);
+            this._disciplineFLP.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(849, 457);
+            this.ClientSize = new System.Drawing.Size(874, 451);
+            this.Controls.Add(this._disciplineFLP);
             this.Controls.Add(this._newGoalBtn);
             this.Controls.Add(this._categoryToolStrip);
             this.Name = "Form1";
@@ -108,6 +120,7 @@ namespace DailyTracker
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton _newCatBtn;
         private System.Windows.Forms.Button _newGoalBtn;
+        private System.Windows.Forms.FlowLayoutPanel _disciplineFLP;
     }
 }
 

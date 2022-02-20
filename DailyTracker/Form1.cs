@@ -13,7 +13,8 @@ namespace DailyTracker
 {
     public partial class Form1 : Form
     {
-        GoalModalDialog dlg = new GoalModalDialog();
+        GoalModalDialog _dlg = new GoalModalDialog();
+        List<Goal> _goalList = new List<Goal>();
 
         public Form1()
         {
@@ -33,6 +34,11 @@ namespace DailyTracker
 
                 // Add New Goal
                 _newGoalBtn.Text = $"Add New Goal";
+
+                // FlowLayoutPanel
+                _disciplineFLP.Dock = DockStyle.Fill;
+                _disciplineFLP.FlowDirection = FlowDirection.LeftToRight;
+                _disciplineFLP.AutoScroll = true;
             }
 
             // Form Event Handlers
@@ -50,15 +56,23 @@ namespace DailyTracker
         // Display modal dialog to create new goal panel
         private void _newGoalBtn_Click(object sender, EventArgs e)
         {
-            if (dlg.ShowDialog() == DialogResult.OK)
+            if (_dlg.ShowDialog() == DialogResult.OK)
             {
-                if (dlg.Duration)
+                if (_dlg.Duration)
                 {
                     // Do something
                 }
                 else
                 {
-                    Goal newGoal = new Goal(dlg.SetGoalName, this);
+                    Goal tempG = new Goal(_dlg.SetGoalName);
+                    if (!(_goalList.Any((g) => tempG._goalName.Equals(g._goalName))))
+                    {
+                        _goalList.Add(tempG);
+                        _disciplineFLP.Controls.Add(Goal.CreateGoalPanel(tempG));
+                        Text = $"Daily Tracker App - Successfully added {tempG._goalName}!";
+                    }
+                    else
+                        Text = $"Daily Tracker App - Goal already exists!";
                 }
             }
         }

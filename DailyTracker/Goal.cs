@@ -19,12 +19,11 @@ namespace DailyTracker
         public int _currStreak { get; private set; }    // Current longest streak to be displayed
         public string _goalName { get; private set; }   // Goal name of the chosen panel
 
-        public Goal(string goalName, Form form)
+        public Goal(string goalName)
         {
             _goalName = goalName;
             _currStreak = 0;
             _currDate = DateTime.Now;
-            CreateGoalPanel(form);
         }
 
         /// <summary>
@@ -46,86 +45,90 @@ namespace DailyTracker
         }
 
         /// <summary>
-        /// Create goal panel.
+        /// 
         /// </summary>
-        private void CreateGoalPanel(Form form)
+        /// <param name="form">The form for the Goal object to be created on.</param>
+        /// <param name="g">The Goal object to be created.</param>
+        public static Panel CreateGoalPanel(Object arg)
         {
             const int WIDTH = 200;
-            const int HEIGHT_LAB = 50;
+            const int HEIGHT = 200;
             Color mainBack = Color.Black;
             Color font = Color.White;
 
+            if (!(arg is Goal g))
+                throw new ArgumentException($"Goal:CreateGoalPanel:{nameof(arg)} - Not a valid Goal!");
+
             // Create initial panel
             Panel newPanel = new Panel();
-            newPanel.Name = $"_{_goalName}Panel";
-            newPanel.Size = new Size(WIDTH, 200);
-            newPanel.Location = new Point(15, 35);
+            newPanel.Name = $"_{g._goalName}Panel";
+            newPanel.Size = new Size(WIDTH, HEIGHT);
             newPanel.BackColor = mainBack;
             newPanel.BorderStyle = BorderStyle.FixedSingle;
-
-            // Create streak label
-            Label streakLabel = new Label();
-            streakLabel.Text = $"{_currStreak}";
-            streakLabel.Name = $"_{_goalName}StreakLabel";
-            streakLabel.ForeColor = font;
-            streakLabel.TextAlign = ContentAlignment.MiddleCenter;
-            streakLabel.BackColor = mainBack;
-            streakLabel.BorderStyle = BorderStyle.None;
-            streakLabel.AutoSize = false;
-            streakLabel.Dock = DockStyle.Left;
-            newPanel.Controls.Add(streakLabel);
 
             // Create increment button
             Button incBtn = new Button();
             incBtn.Text = $"Log";
-            incBtn.Name = $"_{_goalName}LogBtn";
-            incBtn.BackColor = mainBack;
+            incBtn.Name = $"_{g._goalName}LogBtn";
+            incBtn.ForeColor = font;
+            incBtn.BackColor = Color.Green;
+            incBtn.Size = new Size(WIDTH / 2, HEIGHT / 3);
             incBtn.FlatStyle = FlatStyle.Flat;
             incBtn.FlatAppearance.BorderSize = 0;
-            incBtn.ForeColor = font;
             incBtn.TextAlign = ContentAlignment.MiddleCenter;
             incBtn.Dock = DockStyle.Right;
             newPanel.Controls.Add(incBtn);
 
+            // Create streak label
+            Label streakLabel = new Label();
+            streakLabel.Text = $"{g._currStreak}";
+            streakLabel.Name = $"_{g._goalName}StreakLabel";
+            streakLabel.ForeColor = font;
+            streakLabel.BackColor = mainBack;
+            streakLabel.AutoSize = false;
+            streakLabel.Size = new Size(WIDTH / 2, HEIGHT / 3);
+            streakLabel.TextAlign = ContentAlignment.MiddleCenter;
+            streakLabel.BorderStyle = BorderStyle.None;
+            streakLabel.Dock = DockStyle.Left;
+            newPanel.Controls.Add(streakLabel);
+
             // Create header label
             Label headerLabel = new Label();
-            headerLabel.Text = $"{_goalName}";
-            headerLabel.Name = $"_{_goalName}Label";
+            headerLabel.Text = $"{g._goalName}";
+            headerLabel.Name = $"_{g._goalName}Label";
             headerLabel.ForeColor = font;
+            headerLabel.BackColor = mainBack;
+            headerLabel.AutoSize = false;
             headerLabel.TextAlign = ContentAlignment.MiddleCenter;
             headerLabel.BorderStyle = BorderStyle.None;
-            headerLabel.AutoSize = false;
             headerLabel.Dock = DockStyle.Top;
-            headerLabel.Size = new Size(WIDTH, 30);
             newPanel.Controls.Add(headerLabel);
 
             // Create datetime label
             Label dateLabel = new Label();
-            dateLabel.Text = $"{_currDate}";
-            dateLabel.Name = $"_{_goalName}DateLabel";
+            dateLabel.Text = $"{g._currDate}";
+            dateLabel.Name = $"_{g._goalName}DateLabel";
             dateLabel.ForeColor = font;
-            dateLabel.TextAlign = ContentAlignment.MiddleCenter;
             dateLabel.BackColor = mainBack;
-            dateLabel.BorderStyle = BorderStyle.None;
             dateLabel.AutoSize = false;
+            dateLabel.TextAlign = ContentAlignment.MiddleCenter;
+            dateLabel.BorderStyle = BorderStyle.None;
             dateLabel.Dock = DockStyle.Bottom;
-            dateLabel.Size = new Size(WIDTH, HEIGHT_LAB);
             newPanel.Controls.Add(dateLabel);
 
             // Create reset button
             Button resBtn = new Button();
             resBtn.Text = $"Reset";
-            resBtn.Name = $"_{_goalName}ResetBtn";
-            resBtn.BackColor = mainBack;
+            resBtn.Name = $"_{g._goalName}ResetBtn";
+            resBtn.ForeColor = font;
+            resBtn.BackColor = Color.Red;
             resBtn.FlatStyle = FlatStyle.Flat;
             resBtn.FlatAppearance.BorderSize = 0;
-            resBtn.ForeColor = font;
             resBtn.TextAlign = ContentAlignment.MiddleCenter;
             resBtn.Dock = DockStyle.Bottom;
-            resBtn.Size = new Size(WIDTH, 30);
             newPanel.Controls.Add(resBtn);
 
-            form.Controls.Add(newPanel);
+            return newPanel;
         }
     }
 }
