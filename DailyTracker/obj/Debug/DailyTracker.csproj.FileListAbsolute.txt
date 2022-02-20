@@ -60,3 +60,4 @@ C:\Users\Danny\Documents\Program - C#\daily-tracker\DailyTracker\bin\Debug\Micro
 C:\Users\Danny\Documents\Program - C#\daily-tracker\DailyTracker\bin\Debug\en\Microsoft.VisualStudio.Imaging.resources.dll
 C:\Users\Danny\Documents\Program - C#\daily-tracker\DailyTracker\obj\Debug\DailyTracker.exe.config
 C:\Users\Danny\Documents\Program - C#\daily-tracker\DailyTracker\obj\Debug\DailyTracker.csproj.CopyComplete
+C:\Users\Danny\Documents\Program - C#\daily-tracker\DailyTracker\obj\Debug\DailyTracker.GoalModalDialog.resources

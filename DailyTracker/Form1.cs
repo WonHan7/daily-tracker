@@ -13,28 +13,38 @@ namespace DailyTracker
 {
     public partial class Form1 : Form
     {
+        GoalModalDialog dlg = new GoalModalDialog();
+
         public Form1()
         {
             InitializeComponent();
 
             // Manage UI Properties
             {
-                _newCatBtn.Text = $"Add New Goal";
-                _goalLabel.Text = $"Test Goal";
-                _incBtn.Text = $"Increment";
-                _resetBtn.Text = $"Reset";
-                _streakLabel.Text = $"1";
-                _dateLabel.Text = $"--/--/--";                
+                Text = $"Daily Tracker App";
+
+                // Default Category
+                _disciplineTool.DisplayStyle = ToolStripItemDisplayStyle.Text;
+                _disciplineTool.Text = $"Discipline";
+
+                // Add New Category
+                _newCatBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
+                _newCatBtn.Text = $"Add New Category";
+
+                // Add New Goal
+                _newGoalBtn.Text = $"Add New Goal";
             }
 
             _newGoalBtn.Click += _newGoalBtn_Click;
         }
 
+        // Display modal dialog to create new goal panel
         private void _newGoalBtn_Click(object sender, EventArgs e)
         {
-            // Display pop-up for user to enter name of the goal
-            InputModalDialog inputDialog = new InputModalDialog();
-            inputDialog.ShowModal();
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                // Do something in the event the user inputs correct information
+            }
         }
     }
 }
