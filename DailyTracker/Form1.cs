@@ -35,7 +35,16 @@ namespace DailyTracker
                 _newGoalBtn.Text = $"Add New Goal";
             }
 
+            // Form Event Handlers
+            Shown += Form1_Shown;
+
+            // UI Event Handlers
             _newGoalBtn.Click += _newGoalBtn_Click;
+        }
+
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            this.CenterToScreen();
         }
 
         // Display modal dialog to create new goal panel
