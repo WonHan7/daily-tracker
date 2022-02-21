@@ -14,9 +14,9 @@ namespace DailyTracker
 {
     class Goal
     {
-        private Panel _goalPanel;                       // Panel that contains all UI elements of a Goal instance
-        private Label _streakLabel;                     // Label that displays current streak
-        private Label _dateLabel;                       // Label that displays current date
+        private Panel _goalPanel = null;                // Panel that contains all UI elements of a Goal instance
+        private Label _streakLabel = null;              // Label that displays current streak
+        private Label _dateLabel = null;                // Label that displays current date
         private DateTime _currDate;                     // Current DateTime to be displayed
         public bool _note { get; set; }                 // Determines whether the goal has a note component
         public int _currStreak { get; private set; }    // Current longest streak to be displayed

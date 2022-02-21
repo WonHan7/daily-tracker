@@ -16,7 +16,7 @@ namespace DailyTracker
     {
         public string SetCategoryName
         {
-            get { return _inputTB.Text; }
+            get { return _inputTB.Text.ToString(); }
         }
 
         public CategoryModalDialog()
@@ -67,7 +67,7 @@ namespace DailyTracker
 
         private void CategoryModalDialog_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (e.CloseReason == CloseReason.UserClosing)
+            if (e.CloseReason.Equals(CloseReason.UserClosing))
                 e.Cancel = true;
 
             Hide();

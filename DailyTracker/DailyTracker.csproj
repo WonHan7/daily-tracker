@@ -52,6 +52,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category.cs" />
     <Compile Include="CategoryModalDialog.cs">
       <SubType>Form</SubType>
     </Compile>

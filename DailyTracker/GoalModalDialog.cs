@@ -76,7 +76,7 @@ namespace DailyTracker
 
         private void GoalModalDialog_FormClosing1(object sender, FormClosingEventArgs e)
         {
-            if (e.CloseReason == CloseReason.UserClosing)
+            if (e.CloseReason.Equals(CloseReason.UserClosing))
                 e.Cancel = true;
 
             Hide();

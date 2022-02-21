@@ -31,49 +31,21 @@ namespace DailyTracker
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this._categoryToolStrip = new System.Windows.Forms.ToolStrip();
-            this._disciplineTool = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this._newCatBtn = new System.Windows.Forms.ToolStripButton();
             this._newGoalBtn = new System.Windows.Forms.Button();
             this._disciplineFLP = new System.Windows.Forms.FlowLayoutPanel();
+            this._newCatBtn = new System.Windows.Forms.ToolStripButton();
             this._categoryToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // _categoryToolStrip
             // 
             this._categoryToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._disciplineTool,
-            this.toolStripSeparator1,
             this._newCatBtn});
             this._categoryToolStrip.Location = new System.Drawing.Point(0, 0);
             this._categoryToolStrip.Name = "_categoryToolStrip";
             this._categoryToolStrip.Size = new System.Drawing.Size(874, 25);
             this._categoryToolStrip.TabIndex = 0;
             this._categoryToolStrip.Text = "toolStrip1";
-            // 
-            // _disciplineTool
-            // 
-            this._disciplineTool.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this._disciplineTool.Image = ((System.Drawing.Image)(resources.GetObject("_disciplineTool.Image")));
-            this._disciplineTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this._disciplineTool.Name = "_disciplineTool";
-            this._disciplineTool.Size = new System.Drawing.Size(98, 22);
-            this._disciplineTool.Text = "toolStripButton1";
-            this._disciplineTool.ToolTipText = "Discipline";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // _newCatBtn
-            // 
-            this._newCatBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this._newCatBtn.Image = ((System.Drawing.Image)(resources.GetObject("_newCatBtn.Image")));
-            this._newCatBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this._newCatBtn.Name = "_newCatBtn";
-            this._newCatBtn.Size = new System.Drawing.Size(23, 22);
-            this._newCatBtn.Text = "toolStripButton1";
             // 
             // _newGoalBtn
             // 
@@ -94,6 +66,15 @@ namespace DailyTracker
             this._disciplineFLP.Name = "_disciplineFLP";
             this._disciplineFLP.Size = new System.Drawing.Size(874, 426);
             this._disciplineFLP.TabIndex = 2;
+            // 
+            // _newCatBtn
+            // 
+            this._newCatBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this._newCatBtn.Image = ((System.Drawing.Image)(resources.GetObject("_newCatBtn.Image")));
+            this._newCatBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this._newCatBtn.Name = "_newCatBtn";
+            this._newCatBtn.Size = new System.Drawing.Size(23, 22);
+            this._newCatBtn.Text = "toolStripButton1";
             // 
             // Form1
             // 
@@ -116,8 +97,6 @@ namespace DailyTracker
         #endregion
 
         private System.Windows.Forms.ToolStrip _categoryToolStrip;
-        private System.Windows.Forms.ToolStripButton _disciplineTool;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton _newCatBtn;
         private System.Windows.Forms.Button _newGoalBtn;
         private System.Windows.Forms.FlowLayoutPanel _disciplineFLP;

@@ -15,6 +15,8 @@ namespace DailyTracker
     {
         CategoryModalDialog _dlgC = new CategoryModalDialog();
         GoalModalDialog _dlg = new GoalModalDialog();
+
+        List<Category> _catList = new List<Category>();
         List<Goal> _goalList = new List<Goal>();
 
         public Form1()
@@ -25,21 +27,28 @@ namespace DailyTracker
             {
                 Text = $"Daily Tracker App";
 
+                /*
                 // Default Category
                 _disciplineTool.DisplayStyle = ToolStripItemDisplayStyle.Text;
                 _disciplineTool.Text = $"Discipline";
+                */
 
+                /*
                 // Add New Category
                 _newCatBtn.DisplayStyle = ToolStripItemDisplayStyle.Text;
                 _newCatBtn.Text = $"Add New Category";
+                */
 
                 // Add New Goal
                 _newGoalBtn.Text = $"Add New Goal";
+                _newGoalBtn.TabIndex = 99;
 
+                /*
                 // FlowLayoutPanel
                 _disciplineFLP.Dock = DockStyle.Fill;
                 _disciplineFLP.FlowDirection = FlowDirection.LeftToRight;
                 _disciplineFLP.AutoScroll = true;
+                */
             }
 
             // Form Event Handlers
@@ -58,7 +67,7 @@ namespace DailyTracker
         // Display modal dialog to create new goal panel
         private void _newGoalBtn_Click(object sender, EventArgs e)
         {
-            if (_dlg.ShowDialog() == DialogResult.OK)
+            if (_dlg.ShowDialog().Equals(DialogResult.OK))
             {
                 Goal tempG = new Goal(_dlg.SetGoalName);
 
@@ -82,9 +91,17 @@ namespace DailyTracker
 
         private void _newCatBtn_Click(object sender, EventArgs e)
         {
-            if (_dlgC.ShowDialog() == DialogResult.OK)
+            if (_dlgC.ShowDialog().Equals(DialogResult.OK))
             {
-                // Do something
+                Category tempC = new Category(_catList);
+
+                // Check for duplicates
+                if (!(_catList.Any((c) => tempC.Equals(c))))
+                {
+                    // Do something
+                }
+                else
+                    Text = $"Daily Tracker App - Category already exists!";
             }
         }
     }
