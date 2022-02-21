@@ -19,9 +19,9 @@ namespace DailyTracker
             get { return _inputTB.Text; }
         }
 
-        public bool Duration
+        public bool Notes
         {
-            get { return _durationCB.Checked; }
+            get { return _noteCB.Checked; }
         }
 
         public GoalModalDialog()
@@ -42,9 +42,14 @@ namespace DailyTracker
                 _goalLabel.AutoSize = false;
                 _goalLabel.TextAlign = ContentAlignment.MiddleCenter;
 
-                _durationCB.Text = $"Duration";
-                _durationCB.TextAlign = ContentAlignment.MiddleCenter;
+                // Input textbox
+                _inputTB.ScrollBars = RichTextBoxScrollBars.None;
 
+                // Notes checkbox
+                _noteCB.Text = $"Notes";
+                _noteCB.TextAlign = ContentAlignment.MiddleCenter;
+
+                // Confirm button
                 _submitBtn.Text = $"Create Goal";
                 _submitBtn.TextAlign = ContentAlignment.MiddleCenter;
             }

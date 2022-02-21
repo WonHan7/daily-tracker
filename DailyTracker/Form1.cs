@@ -58,22 +58,21 @@ namespace DailyTracker
         {
             if (_dlg.ShowDialog() == DialogResult.OK)
             {
-                if (_dlg.Duration)
+                Goal tempG = new Goal(_dlg.SetGoalName);
+
+                if (_dlg.Notes)
                 {
-                    // Do something
+                    tempG._note = true;
+                }
+
+                if (!(_goalList.Any((g) => tempG._goalName.Equals(g._goalName))))
+                {
+                    _goalList.Add(tempG);
+                    _disciplineFLP.Controls.Add(Goal.CreateGoalPanel(tempG, _goalList, _disciplineFLP));
+                    Text = $"Daily Tracker App - Successfully added {tempG._goalName}!";
                 }
                 else
-                {
-                    Goal tempG = new Goal(_dlg.SetGoalName);
-                    if (!(_goalList.Any((g) => tempG._goalName.Equals(g._goalName))))
-                    {
-                        _goalList.Add(tempG);
-                        _disciplineFLP.Controls.Add(Goal.CreateGoalPanel(tempG));
-                        Text = $"Daily Tracker App - Successfully added {tempG._goalName}!";
-                    }
-                    else
-                        Text = $"Daily Tracker App - Goal already exists!";
-                }
+                    Text = $"Daily Tracker App - Goal already exists!";
             }
         }
     }
