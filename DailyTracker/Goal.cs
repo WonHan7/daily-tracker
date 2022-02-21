@@ -118,9 +118,8 @@ namespace DailyTracker
             incBtn.TextAlign = ContentAlignment.MiddleCenter;
             incBtn.Dock = DockStyle.Right;
             incBtn.Click += (s, e) => {
-                Button button = s as Button;
-                goalList.Find((tg) => button.Name == tg._goalName)._currStreak++;
-                g._streakLabel.Text = $"{g._currStreak}";
+                g.UpdateStreak();
+                g.UpdateDate();
             };
             g._goalPanel.Controls.Add(incBtn);
 
@@ -169,9 +168,9 @@ namespace DailyTracker
             resBtn.TextAlign = ContentAlignment.MiddleCenter;
             resBtn.Dock = DockStyle.Bottom;
             resBtn.Click += (s, e) => {
-                Button button = s as Button;
-                goalList.Find((tg) => button.Name == tg._goalName)._currStreak = 0;
+                g._currStreak = 0;
                 g._streakLabel.Text = $"{g._currStreak}";
+                g.UpdateDate();
             };
             g._goalPanel.Controls.Add(resBtn);
 
@@ -187,13 +186,30 @@ namespace DailyTracker
             delBtn.TextAlign = ContentAlignment.MiddleCenter;
             delBtn.Dock = DockStyle.Bottom;
             delBtn.Click += (s, e) => {
-                Button button = s as Button;
                 flp.Controls.Remove(g._goalPanel);
                 goalList.Remove(g);
             };
             g._goalPanel.Controls.Add(delBtn);
 
             return g._goalPanel;
+        }
+
+        /// <summary>
+        /// Helper function to update and display correct streak count
+        /// </summary>
+        private void UpdateStreak()
+        {
+            _currStreak++;
+            _streakLabel.Text = $"{_currStreak}";
+        }
+
+        /// <summary>
+        /// Helper function to update and display correct time
+        /// </summary>
+        private void UpdateDate()
+        {
+            _currDate = DateTime.Now;
+            _dateLabel.Text = $"{_currDate}";
         }
     }
 }

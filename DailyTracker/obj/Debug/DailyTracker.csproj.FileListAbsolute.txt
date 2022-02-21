@@ -61,3 +61,4 @@ C:\Users\Danny\Documents\Program - C#\daily-tracker\DailyTracker\bin\Debug\en\Mi
 C:\Users\Danny\Documents\Program - C#\daily-tracker\DailyTracker\obj\Debug\DailyTracker.exe.config
 C:\Users\Danny\Documents\Program - C#\daily-tracker\DailyTracker\obj\Debug\DailyTracker.csproj.CopyComplete
 C:\Users\Danny\Documents\Program - C#\daily-tracker\DailyTracker\obj\Debug\DailyTracker.GoalModalDialog.resources
+C:\Users\Danny\Documents\Program - C#\daily-tracker\DailyTracker\obj\Debug\DailyTracker.CategoryModalDialog.resources

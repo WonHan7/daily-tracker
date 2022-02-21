@@ -13,6 +13,7 @@ namespace DailyTracker
 {
     public partial class Form1 : Form
     {
+        CategoryModalDialog _dlgC = new CategoryModalDialog();
         GoalModalDialog _dlg = new GoalModalDialog();
         List<Goal> _goalList = new List<Goal>();
 
@@ -46,6 +47,7 @@ namespace DailyTracker
 
             // UI Event Handlers
             _newGoalBtn.Click += _newGoalBtn_Click;
+            _newCatBtn.Click += _newCatBtn_Click;
         }
 
         private void Form1_Shown(object sender, EventArgs e)
@@ -60,11 +62,13 @@ namespace DailyTracker
             {
                 Goal tempG = new Goal(_dlg.SetGoalName);
 
+                // Enable notes
                 if (_dlg.Notes)
                 {
                     tempG._note = true;
                 }
 
+                // Check for duplicates
                 if (!(_goalList.Any((g) => tempG._goalName.Equals(g._goalName))))
                 {
                     _goalList.Add(tempG);
@@ -73,6 +77,14 @@ namespace DailyTracker
                 }
                 else
                     Text = $"Daily Tracker App - Goal already exists!";
+            }
+        }
+
+        private void _newCatBtn_Click(object sender, EventArgs e)
+        {
+            if (_dlgC.ShowDialog() == DialogResult.OK)
+            {
+                // Do something
             }
         }
     }
